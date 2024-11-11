@@ -11,10 +11,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "@nestjs/core": "^10.4.7",
-    "pinia": "^2.2.6",
     "vue": "^3.5.12",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.0",
