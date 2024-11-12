@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import todo from './components/todo.vue'  // import component todo
+import Todo from './components/Todo.vue'  // ใช้ตัวพิมพ์ใหญ่
 </script>
 
 <template>
   <div class="page-container">
     <div class="content-container">
       <h1 class="todo-title">TodoList</h1>
-      <todo />
+      <Todo />  <!-- ใช้ตัวพิมพ์ใหญ่ -->
     </div>
   </div>
 </template>

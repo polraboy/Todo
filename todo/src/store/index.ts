@@ -4,6 +4,7 @@ interface TodoItem {
   id: number
   task: string
   status: boolean
+  date: string 
 }
 
 interface State {
@@ -15,10 +16,11 @@ export default createStore({
     todos: [] as TodoItem[]
   },
   mutations: {
-    ADD_TODO(state: State, task: string) {
+    ADD_TODO(state: State, payload: { task: string, date: string }) {
       state.todos.push({
         id: Date.now(),
-        task: task,
+        task: payload.task,
+        date: payload.date,
         status: false
       })
     },
@@ -33,15 +35,17 @@ export default createStore({
     }
   },
   actions: {
-    addTodo({ commit }, task: string) {
-      commit('ADD_TODO', task)
+    addTodo({ commit }, payload: { task: string, date: string }) {
+      commit('ADD_TODO', payload)
     },
     deleteTodo({ commit }, id: number) {
       commit('DELETE_TODO', id)
     },
     toggleStatus({ commit }, id: number) {
       commit('TOGGLE_STATUS', id)
-    }
+    },
+    
+    
   },
   getters: {
     allTodos: (state: State) => state.todos
